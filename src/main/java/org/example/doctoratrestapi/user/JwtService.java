@@ -45,7 +45,7 @@ public class JwtService {
                 .expiration(new Date(System.currentTimeMillis() + jwtProperties.getExpiration()))
                 .signWith(getSigningKey()).compact();
     }
-
+    // getSubject === UserModel
     public String extractUsername(String token) {
         return extractClaim(token, Claims::getSubject) ;
     }
