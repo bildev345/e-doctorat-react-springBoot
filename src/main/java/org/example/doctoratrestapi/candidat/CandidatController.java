@@ -13,7 +13,7 @@ public class CandidatController {
     @Autowired
     private CandidatService candidatService;
     @GetMapping("candidat")
-    public CandidatModel getCandidat(@RequestParam Integer id){
+    public CandidatModel getCandidat(@RequestParam Long id){
         Optional candidatModel = candidatService.getCandidatById(id);
         if(candidatModel.isPresent()){
             return (CandidatModel) candidatModel.get();
@@ -22,7 +22,7 @@ public class CandidatController {
     }
 
     @GetMapping("getCandidat/{id}")
-    public CandidatModel getCandidatById(@PathVariable Integer id){
+    public CandidatModel getCandidatById(@PathVariable Long id){
         Optional candidatModel = candidatService.getCandidatById(id);
         if(candidatModel.isPresent()){
             return (CandidatModel) candidatModel.get();
@@ -41,7 +41,7 @@ public class CandidatController {
     }
 
     @DeleteMapping("{id}") 
-    public List<CandidatModel> deleteDoctorant(@PathVariable Integer id){
+    public List<CandidatModel> deleteDoctorant(@PathVariable Long id){
         return candidatService.deleteCandidat(id);
     } 
 

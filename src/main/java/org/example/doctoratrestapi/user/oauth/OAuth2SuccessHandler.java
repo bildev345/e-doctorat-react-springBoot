@@ -35,7 +35,8 @@ public class OAuth2SuccessHandler implements AuthenticationSuccessHandler {
             throw new IllegalStateException("Email not provided by OAuth2 provider");
         }
         Optional<UserModel> user = Optional.of(userRepo.findByUsername(email)
-                .orElseGet(() -> createNewUser(oAuth2User)));
+                .orElseThrow());
+
         String jwt = jwtService.generateToken(user.get());
         response.setContentType("application/json");
         response.getWriter().write("""
@@ -46,14 +47,14 @@ public class OAuth2SuccessHandler implements AuthenticationSuccessHandler {
 
     }
     // à discuter aprés
-    private UserModel createNewUser(OAuth2User oAuth2User){
-        UserModel user = new UserModel();
-        user.setUsername(oAuth2User.getAttribute("email"));
-
-        Optional<RoleModel> professorRole = Optional.ofNullable(roleRepo.findByName("ROLE_PROFESSOR").orElseThrow(() -> new IllegalStateException("Le ROLE_PROFESSEUR n'existe pas")));
-        professorRole.ifPresent(roleModel -> user.setRoles(Set.of(roleModel)));
-
-        return userRepo.save(user);
-    }
+//    private UserModel createNewUser(OAuth2User oAuth2User){
+//        UserModel user = new UserModel();
+//        user.setUsername(oAuth2User.getAttribute("email"));
+//
+//        Optional<RoleModel> professorRole = Optional.ofNullable(roleRepo.findByName("ROLE_PROFESSOR").orElseThrow(() -> new IllegalStateException("Le ROLE_PROFESSEUR n'existe pas")));
+//        professorRole.ifPresent(roleModel -> user.setRoles(Set.of(roleModel)));
+//
+//        return userRepo.save(user);
+//    }
 
 }
