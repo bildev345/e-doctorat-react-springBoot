@@ -11,7 +11,7 @@ import org.example.doctoratrestapi.models.ExaminerModel;
 import org.example.doctoratrestapi.dtos.examination.ExaminationCreationDTO;
 import org.example.doctoratrestapi.models.ProfesseurModel;
 import org.example.doctoratrestapi.professeur.ProfesseurRepository;
-import org.example.doctoratrestapi.sujet.SujetModel;
+import org.example.doctoratrestapi.models.SujetModel;
 import org.example.doctoratrestapi.sujet.SujetRepository;
 import org.example.doctoratrestapi.utils.SecurityUtils;
 import org.springframework.stereotype.Service;

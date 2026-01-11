@@ -1,7 +1,6 @@
 package org.example.doctoratrestapi.sujet;
 
-import org.example.doctoratrestapi.sujet.dto.SujetDTO;
-import org.example.doctoratrestapi.sujet.dto.SujetDtoCreation;
+import org.example.doctoratrestapi.dtos.sujet.SujetDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

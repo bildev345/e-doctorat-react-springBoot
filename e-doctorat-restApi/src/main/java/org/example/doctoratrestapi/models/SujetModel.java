@@ -1,13 +1,9 @@
-package org.example.doctoratrestapi.sujet;
+package org.example.doctoratrestapi.models;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.example.doctoratrestapi.models.ExaminerModel;
-import org.example.doctoratrestapi.models.FormationDoctoraleModel;
-import org.example.doctoratrestapi.models.InscriptionModel;
-import org.example.doctoratrestapi.models.ProfesseurModel;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -2,7 +2,7 @@ package org.example.doctoratrestapi.laboratoire;
 
 import org.example.doctoratrestapi.dtos.labo.LaboratoireDTO;
 import org.example.doctoratrestapi.models.InscriptionModel;
-import org.example.doctoratrestapi.sujet.SujetModel;
+import org.example.doctoratrestapi.models.SujetModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;

@@ -4,9 +4,8 @@ import org.example.doctoratrestapi.dtos.commission.CommissionDTO;
 import org.example.doctoratrestapi.dtos.candidat.CandidatDTO;
 import org.example.doctoratrestapi.dtos.examination.ExaminationCreationDTO;
 import org.example.doctoratrestapi.dtos.inscription.CandidatInscriptionDto;
-import org.example.doctoratrestapi.dtos.notification.NotificationCreationDTO;
-import org.example.doctoratrestapi.sujet.dto.SujetDTO;
-import org.example.doctoratrestapi.sujet.dto.SujetDtoCreation;
+import org.example.doctoratrestapi.dtos.sujet.SujetDTO;
+import org.example.doctoratrestapi.dtos.sujet.SujetDtoCreation;
 
 import java.util.List;
 

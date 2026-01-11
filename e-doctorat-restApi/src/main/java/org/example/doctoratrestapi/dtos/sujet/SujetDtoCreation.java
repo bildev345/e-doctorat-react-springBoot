@@ -1,4 +1,4 @@
-package org.example.doctoratrestapi.sujet.dto;
+package org.example.doctoratrestapi.dtos.sujet;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

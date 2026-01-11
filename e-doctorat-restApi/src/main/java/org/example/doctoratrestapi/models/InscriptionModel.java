@@ -3,7 +3,6 @@ package org.example.doctoratrestapi.models;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.example.doctoratrestapi.sujet.SujetModel;
 
 import java.time.LocalDate;
 

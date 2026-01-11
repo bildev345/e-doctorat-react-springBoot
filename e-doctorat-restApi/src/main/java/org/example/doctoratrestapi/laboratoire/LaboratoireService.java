@@ -6,7 +6,7 @@ import org.example.doctoratrestapi.models.InscriptionModel;
 import org.example.doctoratrestapi.inscription.InscriptionRepository;
 import org.example.doctoratrestapi.models.LaboratoireModel;
 import org.example.doctoratrestapi.models.ProfesseurModel;
-import org.example.doctoratrestapi.sujet.SujetModel;
+import org.example.doctoratrestapi.models.SujetModel;
 import org.example.doctoratrestapi.sujet.SujetRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

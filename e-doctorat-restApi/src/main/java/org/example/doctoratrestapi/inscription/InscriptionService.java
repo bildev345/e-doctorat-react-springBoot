@@ -7,7 +7,7 @@ import org.example.doctoratrestapi.candidat.CandidatRepository;
 import org.example.doctoratrestapi.dtos.inscription.CandidatInscriptionCreationDto;
 import org.example.doctoratrestapi.dtos.inscription.CandidatInscriptionDto;
 import org.example.doctoratrestapi.models.InscriptionModel;
-import org.example.doctoratrestapi.sujet.SujetModel;
+import org.example.doctoratrestapi.models.SujetModel;
 import org.example.doctoratrestapi.sujet.SujetRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

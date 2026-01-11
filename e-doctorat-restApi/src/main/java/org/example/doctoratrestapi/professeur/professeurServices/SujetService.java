@@ -2,11 +2,11 @@ package org.example.doctoratrestapi.professeur.professeurServices;
 
 import org.example.doctoratrestapi.models.FormationDoctoraleModel;
 import org.example.doctoratrestapi.formationdoctorale.FormationDoctoraleRepository;
-import org.example.doctoratrestapi.sujet.SujetMapper;
-import org.example.doctoratrestapi.sujet.SujetModel;
+import org.example.doctoratrestapi.mappers.SujetMapper;
+import org.example.doctoratrestapi.models.SujetModel;
 import org.example.doctoratrestapi.sujet.SujetRepository;
-import org.example.doctoratrestapi.sujet.dto.SujetDTO;
-import org.example.doctoratrestapi.sujet.dto.SujetDtoCreation;
+import org.example.doctoratrestapi.dtos.sujet.SujetDTO;
+import org.example.doctoratrestapi.dtos.sujet.SujetDtoCreation;
 import org.example.doctoratrestapi.utils.SecurityUtils;
 import org.springframework.stereotype.Service;
 

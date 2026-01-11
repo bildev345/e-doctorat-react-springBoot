@@ -15,5 +15,6 @@ public interface CandidatRepository extends JpaRepository<CandidatModel, Long> {
     @Query("select p.candidatModel from PostulerModel p join p.sujetModel s join s.professeur pr where pr.user.id = :userProfesseurId")
     List<CandidatModel> selectCandidatsByProfesseurId(@Param("userProfesseurId") long userProfesseurId);
 
-
+    @Query("select p.candidatModel from PostulerModel p join p.sujetModel s join s.professeur pr join pr.laboratoire l where l.directeur.id = :directeurId")
+    List<CandidatModel> selectCandidatsByDirecteurLaboId(@Param("directeurId") long directeurId);
 }

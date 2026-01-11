@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.example.doctoratrestapi.sujet.SujetModel;
 
 @Entity
 @Table(name = "postuler")

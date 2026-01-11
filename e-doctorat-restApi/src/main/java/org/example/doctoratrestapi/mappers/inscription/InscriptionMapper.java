@@ -3,7 +3,7 @@ import org.example.doctoratrestapi.models.InscriptionModel;
 import org.example.doctoratrestapi.models.CandidatModel;
 import org.example.doctoratrestapi.dtos.inscription.CandidatInscriptionCreationDto;
 import org.example.doctoratrestapi.dtos.inscription.CandidatInscriptionDto;
-import org.example.doctoratrestapi.sujet.SujetModel;
+import org.example.doctoratrestapi.models.SujetModel;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;

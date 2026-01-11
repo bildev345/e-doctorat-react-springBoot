@@ -6,7 +6,7 @@ import org.example.doctoratrestapi.models.CommissionModel;
 import org.example.doctoratrestapi.commission.CommissionRepository;
 import org.example.doctoratrestapi.dtos.examination.ExaminationCreationDTO;
 import org.example.doctoratrestapi.models.ExaminerModel;
-import org.example.doctoratrestapi.sujet.SujetModel;
+import org.example.doctoratrestapi.models.SujetModel;
 import org.example.doctoratrestapi.sujet.SujetRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

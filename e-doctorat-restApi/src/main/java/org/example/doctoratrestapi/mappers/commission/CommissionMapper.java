@@ -1,5 +1,6 @@
 package org.example.doctoratrestapi.mappers.commission;
 
+import org.example.doctoratrestapi.dtos.commission.CommissionCreationDto;
 import org.example.doctoratrestapi.dtos.labo.LaboratoireDTO;
 import org.example.doctoratrestapi.dtos.professeur.ProfesseurDto;
 import org.example.doctoratrestapi.mappers.laboratoire.LaboratoireMapper;
@@ -7,6 +8,7 @@ import org.example.doctoratrestapi.mappers.professeur.ProfesseurMapper;
 import org.example.doctoratrestapi.models.CommissionModel;
 import org.example.doctoratrestapi.dtos.commission.CommissionDTO;
 import org.example.doctoratrestapi.models.CommissionProfesseurModel;
+import org.example.doctoratrestapi.models.LaboratoireModel;
 import org.example.doctoratrestapi.models.ProfesseurModel;
 import org.example.doctoratrestapi.professeur.ProfesseurRepository;
 import org.springframework.stereotype.Component;
@@ -62,17 +64,24 @@ public class CommissionMapper {
                 .map(this::toDto)
                 .collect(Collectors.toList());
     }
-//    public CommissionModel toCommissionModel(CommissionDTO dto) {
-//        if (dto == null) {
-//            return null;
-//        }
-//        CommissionModel commission = new CommissionModel();
-//        commission.setId(dto.commissionId());
-//        commission.setDateCommission(dto.dateCommission());
-//        commission.setLieu(dto.lieu());
-//        commission.setHeure(dto.heure());
-//        commission.setLaboratoire(laboMapper.toLaboratoireModel(dto.laboratoireDto()));
-//
-//        return commission;
-//    }
+    public CommissionModel toCommissionModel(CommissionCreationDto dto, List<ProfesseurModel> professeurs, LaboratoireModel laboratoire) {
+        if (dto == null) {
+            return null;
+        }
+        CommissionModel commission = new CommissionModel();
+        commission.setDateCommission(dto.dateCommission());
+        commission.setLieu(dto.lieu());
+        commission.setHeure(dto.heure());
+        commission.setLaboratoire(laboratoire);
+        List<CommissionProfesseurModel> commissionProfessors = professeurs.stream()
+                .map(professeur -> {
+                    CommissionProfesseurModel cp = new CommissionProfesseurModel();
+                    cp.setCommission(commission);
+                    cp.setProfesseur(professeur);
+                    return cp;
+                }).toList();
+        commission.setCommissionProfesseurs(commissionProfessors);
+        return commission;
+
+    }
 }

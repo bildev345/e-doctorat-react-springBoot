@@ -7,7 +7,7 @@ import org.example.doctoratrestapi.candidat.CandidatRepository;
 import org.example.doctoratrestapi.models.PostulerModel;
 import org.example.doctoratrestapi.dtos.postuler.PostulerCreationDTO;
 import org.example.doctoratrestapi.dtos.postuler.PostulerDTO;
-import org.example.doctoratrestapi.sujet.SujetModel;
+import org.example.doctoratrestapi.models.SujetModel;
 import org.example.doctoratrestapi.sujet.SujetRepository;
 import org.springframework.stereotype.Service;
 
