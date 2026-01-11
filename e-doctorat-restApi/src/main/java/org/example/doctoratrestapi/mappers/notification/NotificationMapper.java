@@ -39,7 +39,7 @@ public class NotificationMapper {
         if (dto == null) return null;
 
         NotificationModel notification = new NotificationModel();
-        notification.setType(dto.getType());
+        notification.setType(dto.type());
         notification.setCandidat(candidat);
         notification.setCommission(commission);
         notification.setSujet(sujet);
