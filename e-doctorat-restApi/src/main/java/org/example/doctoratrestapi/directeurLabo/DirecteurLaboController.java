@@ -3,6 +3,7 @@ package org.example.doctoratrestapi.directeurLabo;
 import org.example.doctoratrestapi.api.ApiResponse;
 import org.example.doctoratrestapi.dtos.candidat.CandidatDTO;
 import org.example.doctoratrestapi.dtos.commission.CommissionCreationDto;
+import org.example.doctoratrestapi.dtos.commission.CommissionDTO;
 import org.example.doctoratrestapi.dtos.examination.ExaminationDTO;
 import org.example.doctoratrestapi.dtos.inscription.CandidatInscriptionDto;
 import org.example.doctoratrestapi.dtos.sujet.SujetDTO;
@@ -55,13 +56,13 @@ public class DirecteurLaboController {
                         Instant.now()
                 ));
     }
-    public ResponseEntity<ApiResponse<Void>> addCommission(@RequestBody CommissionCreationDto dto){
-        directeurLaboServiceFacade.addCommission(dto);
+    public ResponseEntity<ApiResponse<CommissionDTO>> addCommission(@RequestBody CommissionCreationDto dto){
+        CommissionDTO commissionDto = directeurLaboServiceFacade.addCommission(dto);
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(new ApiResponse<>(
                         true,
                         "La commission à été crée avec succès",
-                        null,
+                        commissionDto,
                         Instant.now()
                 ));
 

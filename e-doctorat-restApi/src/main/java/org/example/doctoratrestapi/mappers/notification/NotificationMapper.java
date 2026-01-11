@@ -1,8 +1,11 @@
 package org.example.doctoratrestapi.mappers.notification;
 
+import org.example.doctoratrestapi.models.CandidatModel;
+import org.example.doctoratrestapi.models.CommissionModel;
 import org.example.doctoratrestapi.models.NotificationModel;
 import org.example.doctoratrestapi.dtos.notification.NotificationCreationDTO;
 import org.example.doctoratrestapi.dtos.notification.NotificationDTO;
+import org.example.doctoratrestapi.models.SujetModel;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -27,14 +30,19 @@ public class NotificationMapper {
         );
     }
 
-    public NotificationModel toEntity(NotificationCreationDTO dto) {
+    public NotificationModel toEntity(
+            NotificationCreationDTO dto,
+            CandidatModel candidat,
+            CommissionModel commission,
+            SujetModel sujet
+    ) {
         if (dto == null) return null;
 
-        NotificationModel entity = new NotificationModel();
-        entity.setType(dto.getType());
-        entity.getCandidat().setId(dto.getCandidatId());
-        entity.getSujet().setId(dto.getSujetId());
-        entity.getCommission().setId(dto.getCommissionId());
-        return entity;
+        NotificationModel notification = new NotificationModel();
+        notification.setType(dto.type());
+        notification.setCandidat(candidat);
+        notification.setCommission(commission);
+        notification.setSujet(sujet);
+        return notification;
     }
 }
