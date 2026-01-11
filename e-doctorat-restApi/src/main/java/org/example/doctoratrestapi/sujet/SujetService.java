@@ -26,24 +26,24 @@ public class SujetService {
     @Autowired
     private SujetMapper mapper;
 
-    public SujetDTO addSujet(SujetDtoCreation sujetDtoCreation, Long professeurId){
-        ProfesseurModel professeur = profRep.findById(professeurId)
-                .orElseThrow(() -> new RuntimeException("Candidat est introuvable!!!"));
-        ProfesseurModel coDirecteur = profRep.findById(sujetDtoCreation.getCoDirecteurId())
-                .orElseThrow(() -> new RuntimeException("Le coDirecteur est introuvable!!!"));
-        FormationDoctoraleModel formation = formationRep.findById(sujetDtoCreation.getFormationDoctoralId())
-                .orElseThrow(() -> new RuntimeException("La formation doctorale est introuvable!!!"));
-
-        SujetModel sujet = mapper.toSujet(sujetDtoCreation, coDirecteur, professeur, formation);
-        SujetModel createdSujet = sujetRep.save(sujet);
-        return mapper.toDTO(createdSujet);
-    }
-    public List<SujetDTO> getSujetsByLaboId(Long laboId){
-        return sujetRep.findAll()
-                .stream()
-                .map(mapper::toDTO)
-                .collect(Collectors.toList());
-    }
+//    public SujetDTO addSujet(SujetDtoCreation sujetDtoCreation, Long professeurId){
+//        ProfesseurModel professeur = profRep.findById(professeurId)
+//                .orElseThrow(() -> new RuntimeException("Candidat est introuvable!!!"));
+//        ProfesseurModel coDirecteur = profRep.findById(sujetDtoCreation.getCoDirecteurId())
+//                .orElseThrow(() -> new RuntimeException("Le coDirecteur est introuvable!!!"));
+//        FormationDoctoraleModel formation = formationRep.findById(sujetDtoCreation.getFormationDoctoralId())
+//                .orElseThrow(() -> new RuntimeException("La formation doctorale est introuvable!!!"));
+//
+//        SujetModel sujet = mapper.toSujet(sujetDtoCreation, coDirecteur, professeur, formation);
+//        SujetModel createdSujet = sujetRep.save(sujet);
+//        return mapper.toDTO(createdSujet);
+//    }
+//    public List<SujetDTO> getSujetsByLaboId(Long laboId){
+//        return sujetRep.findAll()
+//                .stream()
+//                .map(mapper::toDTO)
+//                .collect(Collectors.toList());
+//    }
     // Supprimer un sujet
     public void deleteSujet(Long professeurId, Long sujetId) {
         SujetModel sujet = sujetRep.findById(sujetId)

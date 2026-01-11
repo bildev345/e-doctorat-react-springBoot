@@ -22,6 +22,9 @@ public interface InscriptionRepository extends JpaRepository<InscriptionModel, L
     List<InscriptionModel> getCandidatsByDirecteurId(@Param("directeurId") Long directeurId);
 
     public boolean existsByCandidatId(Long candidatId);
+
+    @Query("select ins from InscriptionModel ins join ins.sujet s join s.professeur p where p.laboratoire.id = :laboId")
+    List<InscriptionModel> getInscriptionsByLaboId(@Param("laboId") long laboId);
 }
 
 

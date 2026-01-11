@@ -9,6 +9,6 @@ public record CommissionCreationDto(
         String lieu,
         Time heure,
         long laboId,
-        List<Integer> profIds
+        List<Long> profIds
 ) {
 }
