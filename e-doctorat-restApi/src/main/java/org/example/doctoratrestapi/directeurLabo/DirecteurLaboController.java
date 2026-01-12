@@ -6,6 +6,7 @@ import org.example.doctoratrestapi.dtos.commission.CommissionCreationDto;
 import org.example.doctoratrestapi.dtos.commission.CommissionDTO;
 import org.example.doctoratrestapi.dtos.examination.ExaminationDTO;
 import org.example.doctoratrestapi.dtos.inscription.CandidatInscriptionDto;
+import org.example.doctoratrestapi.dtos.notification.NotificationBulkCreationDto;
 import org.example.doctoratrestapi.dtos.sujet.SujetDTO;
 import org.example.doctoratrestapi.dtos.sujet.SujetDtoCreation;
 import org.example.doctoratrestapi.models.ExaminerModel;
@@ -77,6 +78,7 @@ public class DirecteurLaboController {
                 Instant.now()
         ));
     }
+    @GetMapping("getInscrits")
     public ResponseEntity<ApiResponse<List<CandidatInscriptionDto>>> getCandidatsInscritsByLabo(){
         List<CandidatInscriptionDto> inscriptions = directeurLaboServiceFacade.getCandidatsInscritsByLabo();
         return ResponseEntity.ok(new ApiResponse<>(
@@ -85,6 +87,17 @@ public class DirecteurLaboController {
                 inscriptions,
                 Instant.now()
         ));
+    }
+    @PostMapping("createNotifs")
+    public ResponseEntity<ApiResponse<Void>> addNotifications(@RequestBody NotificationBulkCreationDto dto){
+        directeurLaboServiceFacade.addNotifications(dto);
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body(new ApiResponse<>(
+                        true,
+                        "Les notifications sont envoyés avec succés",
+                        null,
+                        Instant.now()
+                ));
     }
 
     // à implementer

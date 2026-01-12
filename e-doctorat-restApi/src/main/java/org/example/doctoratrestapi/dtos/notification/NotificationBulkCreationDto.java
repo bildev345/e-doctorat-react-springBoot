@@ -7,7 +7,7 @@ import java.util.List;
 
 public record NotificationBulkCreationDto(
         Long commissionId,
-        NotificationType type,
+        String type,
         List<SujetCandidatsDto> sujetsCandidats
 ) {
     public NotificationBulkCreationDto{
